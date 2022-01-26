@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
@@ -16,16 +17,16 @@ class LoginPage extends StatelessWidget {
           Image.asset(
             "assets/images/login_image.png",
             fit: BoxFit.cover,
-            height: 230,
+            height: 280,
             width: 500,
           ),
-          // SizedBox(
-          //   height: 10,
-          // ),
+          SizedBox(
+            height: 20,
+          ),
           Text(
             "Welcome",
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -47,13 +48,13 @@ class LoginPage extends StatelessWidget {
                       hintText: "Enter password", labelText: "Password"),
                 ),
                 SizedBox(
-                  height: 45,
+                  height: 40,
                 ),
                 ElevatedButton(
                   child: Text("Login"),
-                  style: TextButton.styleFrom(),
+                  style: TextButton.styleFrom(minimumSize: Size(150, 40)),
                   onPressed: () {
-                    print("Done");
+                    Navigator.pushNamed(context, MyRoutes.homeRoute);
                   },
                 )
               ],
